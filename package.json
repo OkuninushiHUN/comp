@@ -1,7 +1,7 @@
 {
     "private": true,
     "scripts": {
-        "dev": "npm run development",
+        "dev": "nodemon server.js",
         "development": "mix",
         "watch": "mix watch",
         "watch-poll": "mix watch -- --watch-options-poll=1000",
@@ -17,11 +17,19 @@
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.4.6",
+        "resolve-url-loader": "^5.0.0",
+        "sass": "^1.52.3",
+        "sass-loader": "^12.6.0",
         "tailwindcss": "^3.0.18",
         "vue": "^3.2.36",
         "vue-axios": "^3.4.1",
         "vue-loader": "^17.0.0",
         "vue-router": "^4.0.15",
         "vue-template-compiler": "^2.6.14"
+    },
+    "dependencies": {
+        "@e9ine/vue-form-plugin": "^1.0.1",
+        "vue-form": "^4.10.3",
+        "vueform": "^2.0.0"
     }
 }

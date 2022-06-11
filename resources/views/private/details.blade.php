@@ -34,6 +34,7 @@
             </tr>
         @endif
         <tr>
+
             <td colspan="3"> <a class="btn btn-light" href="{{route('showGames',$id)}}">Show me the matches</a></td>
         </tr>
         </tbody>

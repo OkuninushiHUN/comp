@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\competitions;
 use App\Models\participants;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -16,7 +18,8 @@ class participantsSeeder extends Seeder
     public function run()
     {
         participants::factory()
-            ->count(150)
+            ->has(competitions::factory()->count(100))
+            ->count(300)
             ->create();
     }
 }

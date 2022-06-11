@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\competitions;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Database\Seeders\competitionsSeeder;
@@ -20,6 +21,7 @@ class gamesSeeder extends Seeder
     public function run()
     {
         games::factory()
+            ->has(competitions::factory()->count(10))
             ->count(50)
             ->create();
     }

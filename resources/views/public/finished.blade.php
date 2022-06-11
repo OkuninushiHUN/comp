@@ -8,7 +8,6 @@
             <th scope="col">#</th>
             <th scope="col">Location</th>
             <th scope="col">Date</th>
-            <th scope="col">D</th>
             <th scope="col">Open</th>
         </tr>
         </thead>

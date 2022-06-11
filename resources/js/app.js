@@ -1,12 +1,13 @@
 require('./bootstrap')
 
 import { createApp } from 'vue'
-import App from './components/App.vue'
-import Vueform from '@vueform/vueform/plugin'
-import vueformConfig from './../../vueform.config'
+import VueAxios from "vue-axios";
+import axios from "axios";
 
-const app = createApp(App)
+import App from './vue.js';
 
-app.use(Vueform, vueformConfig)
 
-app.mount('#app')
+const app = createApp(App);
+app.use(VueAxios, axios);
+app.mount('#app');
+

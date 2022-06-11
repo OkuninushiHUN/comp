@@ -47,12 +47,12 @@ class CompetitionsController extends Controller
     }
     public function store(Request $request){
         $competition = new competitions();
-
+        $competition->numberOFparticipants = 0;
         $competition->location = $request['location'];
         $competition->date = $request['date'];
-        $competition->deadline = $request['deadline'];
         $competition->max_participants = $request['max_participants'];
         $competition->creator_id=Auth::user()->id;
+        $competition->full = false;
         $competition->save();
 
         return view('private.home');
@@ -61,18 +61,18 @@ class CompetitionsController extends Controller
     public function details($id){
         $data = DB::table('participants')
             ->leftJoin('users','participants.user_id',"=","users.id")
-            ->where('competitions_id',"=", $id)
+            ->where('competition_id',"=", $id)
             ->get();
         return view('private.details',['list'=>$data,'id'=>$id]);
     }
     public function join($id){
         $user_id= (Auth::user()->id);
         $data = DB::table('participants')
-            ->where('competitions_id','=',$id,'and')
+            ->where('competition_id','=',$id,'and')
             ->where('user_id','=', $user_id)
             ->get();
         if(count($data)==0){
-            DB::table('participants')->insert(['competitions_id'=>$id,'user_id'=>$user_id]);
+            DB::table('participants')->insert(['competition_id'=>$id,'user_id'=>$user_id]);
             DB::table('competitions')
                 ->where('id', '=', $id)
                 ->limit(1)

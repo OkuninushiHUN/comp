@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UserDestroyPostRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -15,8 +16,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin.userSeeder', [
-            'userSeeder' => User::all()
+        return view('admin.user', [
+            'user' => User::all()
         ]);
     }
 
@@ -39,6 +40,16 @@ class UserController extends Controller
         $user = User::find($request->id);
         $user->delete();
         //todo message
-        return redirect()->route('admin.userSeeder');
+        return redirect()->route('admin.user');
+    }
+    public function getname($id)
+    {
+        $user = User::find($id);
+        return $user->name;
+    }
+    public function best(){
+
+
+        return view('public.best',['data'=>User::all()]);
     }
 }

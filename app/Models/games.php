@@ -9,8 +9,8 @@ use App\Models\competitions;
 class games extends Model
 {
     use HasFactory;
-    public function Competitions(){
-        return $this->belongsTo(Competitions::class);
+    public function competitions(){
+        return $this->hasMany(\App\Models\competitions::class);
     }
     public function User(){
         return $this->hasMany(User::class);

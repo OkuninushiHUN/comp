@@ -2,17 +2,8 @@
 
 @section('content')
 
-    <ul>
-        @forelse($users ?? [] as $user)
-            <li>
-                {{$user->name}} ({{$user->email}})
 
-
-            </li>
-        @empty
-            <li>HIBA</li>
-        @endforelse
-    </ul>
+            <h2>Welcome our page </h2>
 
 @endsection
 

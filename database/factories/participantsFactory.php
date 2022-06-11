@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\competitions;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,9 +19,9 @@ class participantsFactory extends Factory
     public function definition()
     {
         return [
-            'competition_id'=>$this->faker->numberBetween(1,28),
-            'user_id1'=>$this->faker->numberBetween(1,300),
-            'user_id2'=>$this->faker->numberBetween(1,300),
+            'competition_id'=>(competitions::factory()),
+            'user_id'=>(User::factory()),
+
         ];
     }
 }

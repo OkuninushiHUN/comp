@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 
@@ -19,8 +20,8 @@ class competitionsFactory extends Factory
             'max_participants' =>$this->faker->numberBetween(10,200),
             'numberOFparticipants' =>$this->faker->numberBetween(0,(int)('max_participants')),
             'date' =>$this->faker->dateTimeBetween('now','+5 years'),
-
-            'creator_id'=>$this->faker->numberBetween(),
+            'creator_id'=>$this->faker->numberBetween(1,User::class::count()),
+            'full'=>false,
         ];
     }
 

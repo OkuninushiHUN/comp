@@ -41,4 +41,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function competitons(){
+        return $this->belongsToMany(competitions::class);
+    }
+    public function games(){
+        return $this->belongsTo(games::class);
+
+    }
+    public function participants(){
+        return $this->belongsTo(participants::class);
+    }
 }

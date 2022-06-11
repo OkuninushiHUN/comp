@@ -13,7 +13,7 @@ class PublicController extends Controller
 {
     public function index(){
 
-        return view('public.index',['userSeeder'=>User::all()]);
+        return view('public.index');
     }
 
 }

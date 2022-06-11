@@ -40,6 +40,8 @@ Route::get('/dashboard', function () {
 Route::get('/home', [PrivateController::class, 'home'])
     ->name('private.home')->middleware('auth');
 
+Route::get('/toplist',[UserController::class, 'best'])->name('toplist');
+
 
 
 

@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\competitions;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,9 +19,10 @@ class gamesFactory extends Factory
     public function definition()
     {
         return [
-            'competition_id'=>$this->faker->randomNumber(2),
-            'user_id1'=>$this->faker->randomNumber(2),
-            'user_id2'=>$this->faker->randomNumber(2),
+
+            'competitions_id'=>competitions::factory(),
+            'user_id1'=>User::factory(),
+            'user_id2'=>User::factory(),
             'winner'=>$this->faker->boolean,
 
         ];
