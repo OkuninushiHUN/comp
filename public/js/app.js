@@ -21628,6 +21628,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.axios.get('/api/games/' + this.id).then(function (response) {
+        console.log("siker");
         _this.game = response.data[0];
         _this.isLoaded = true;
       });
@@ -21643,9 +21644,10 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.getData();
 
-    do {
+    if (!this.isLoaded) {
       this.manNeedname(this.game.user_id1);
-    } while (this.isLoaded);
+      this.manNeedname(this.game.user_id2);
+    }
   }
 });
 

@@ -33,10 +33,11 @@
                 <td colspan="6">Be the first: <a><button type="submit">Join</button></a></td></form>
             </tr>
         @endif
-        <tr>
 
+        <tr>
             <td colspan="3"> <a class="btn btn-light" href="{{route('showGames',$id)}}">Show me the matches</a></td>
         </tr>
+
         </tbody>
 
     </table>

@@ -25,14 +25,12 @@
                     <a class="nav-link" href="#">Hall of fame</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="{{route('toplist')}}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Competitions
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{{ route('finished') }}">Finished</a></li>
                         <li><a class="dropdown-item" href="{{route('Notfinished')}}">Not Finished</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Find by location</a></li>
                     </ul>
                 </li>
             </ul>
@@ -42,6 +40,7 @@
 @section('content')
 
 @show
+<script src="{{mix('/js/app.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
