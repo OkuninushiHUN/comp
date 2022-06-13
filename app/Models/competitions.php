@@ -10,7 +10,7 @@ class competitions extends Model
 {
     use HasFactory,SoftDeletes;
     public function games(){
-        return $this->belongsToMany(Games::class);
+        return $this->belongsTo(Games::class);
     }
     public function User(){
         return $this->belongsTo(User::class,'creator_id');
